@@ -715,3 +715,53 @@ h2 {
 .plan.is-selected li::before {
   background: var(--navy);
 }
+
+
+/* الألوان الافتراضية (الوضع الداكن Dark Mode) */
+:root {
+  --navy: #0f1b2d;
+  --navy-2: #152740;
+  --steel: #2a4466;
+  --line: #2b4160;
+  --lime: #b6f24a;
+  --text: #f2f6fa;
+  --muted: #a9b9cc;
+}
+
+/* متغيرات الوضع الفاتح Light Mode عند تفعيله */
+[data-theme="light"] {
+  --navy: #f8fafc;
+  --navy-2: #ffffff;
+  --steel: #cbd5e1;
+  --line: #e2e8f0;
+  --lime: #65a30d; /* أخضر أغمق قليلاً للوضوح في النهار */
+  --text: #0f172a;
+  --muted: #64748b;
+}
+
+/* تنسيق زر تبديل الوضع */
+.theme-toggle {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--muted);
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--lime);
+}
+
+/* إظهار وإخفاء أيقونات الشمس والقمر حسب الوضع الحالي */
+[data-theme="light"] .sun-icon,
+:root:not([data-theme="light"]) .moon-icon {
+  display: none;
+}

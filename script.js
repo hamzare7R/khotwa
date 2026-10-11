@@ -252,3 +252,35 @@ requestAnimationFrame(() => {
     if (stairs) stairs.classList.add("is-ready");
   });
 });
+
+
+
+
+
+// نظام تبديل الوضع النهاري والداكن (Dark / Light Mode)
+const themeToggle = document.getElementById("themeToggle");
+
+function getInitialTheme() {
+  try {
+    const savedTheme = localStorage.getItem("khotwa-theme");
+    if (savedTheme) return savedTheme;
+  } catch (e) {}
+  return "dark"; // الوضع الافتراضي داكن
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  try {
+    localStorage.setItem("khotwa-theme", theme);
+  } catch (e) {}
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    setTheme(currentTheme === "light" ? "dark" : "light");
+  });
+}
+
+// تطبيق الوضع عند فتح الصفحة
+setTheme(getInitialTheme());
