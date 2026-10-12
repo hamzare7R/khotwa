@@ -12,7 +12,7 @@ const translations = {
     "hero.title": "ابدأ بخطوة واحدة اليوم.",
     "hero.text": "برامج تمارين وتغذية للمبتدئين، مع متابعة أسبوعية تعدّل الخطة حسب تقدمك.",
     "hero.primary": "احجز مكالمة مجانية",
-    "hero.secondary": "شوف البرامج",
+    "hero.secondary": "تصفح البرامج",
     "facts.time": "من 30 دقيقة في اليوم",
     "facts.equipment": "بدون معدات في البداية",
     "facts.checkin": "متابعة كل أسبوع",
